@@ -73,7 +73,7 @@ void AssemblyCompiler::ConstsAndLabels(std::string str, int line)
 			throw std::invalid_argument("No const name specified in line " + std::to_string(line));
 		}
 		std::string name = toUpper(str.substr(k, k2 - k));
-		if (k == std::string::npos || isNumber(name) || name[0] != '%')
+		if (isNumber(name) || name[0] != '%')
 		{
 			throw std::invalid_argument("Line " + std::to_string(line) + "- const names should start with %");
 		}
@@ -189,7 +189,7 @@ uint32_t AssemblyCompiler::destination(const std::string& dest, bool isCond)
 	if (!isCond && Registers.find(dest) != Registers.end())
 	{
 
-		if (dest == "IN")//IN cannot be an operand
+		if (dest == "IN")//IN cannot be a destination
 		{
 			return 0xFFFF;
 		}
