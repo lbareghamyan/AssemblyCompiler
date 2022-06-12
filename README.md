@@ -1,8 +1,11 @@
 # AssemblyCompiler
 A compiler that generates machine code for a simple assembly language.  
-## Table of contents
+
+**This assembly language is not case-sensitive**  
+
 * [Registers](#registers)
 * [Instructions](#instructions)
+* [Constants and Labels](#constants-and-labels)
 
 ## Registers
 Assmebly language for this complier supports 7 general purpose register:  
@@ -14,7 +17,8 @@ also input and output registers:
 Syntax of Assembly Language Statements:  
 > opcode      operand1 operand2 destination 
    
-> conditional operand1 operand2 jump_destination
+> conditional operand1 operand2 jump_destination  
+
 ### Opcode
  - **ADD** -  adds op1 and op2 values and writes the result in dest
  - **SUB** -  substracts op2 from op1, writes the result in dest
@@ -30,3 +34,19 @@ Syntax of Assembly Language Statements:
  - **JLE** - Jump if less or equal
  - **JGR** - Jump if greater
  - **JGRE** - Jump if greater or equal
+### Operands  
+Operands can be a register(except the out register), constant or and immediate value  
+### Destination  
+Destination can be a register(exept the in register) or a label(if opcode is a consditional)  
+
+## Constants and Labels
+ -To declare a constant use **const** keyword,  
+ -all constant names should start with **%**   
+example:
+> const %a 13
+  
+-To declare a label use **label** keyword,  
+-all label names should start with **_**    
+example:  
+> label _Label1
+
