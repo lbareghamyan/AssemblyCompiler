@@ -35,7 +35,7 @@ Syntax of Assembly Language Statements:
  - **JGR** - Jump if greater
  - **JGRE** - Jump if greater or equal
 ### Operands  
-Operands can be a register(except the out register), constant or and immediate value  
+Operand can be a register(except the out register), constant or an immediate value  
 ### Destination  
 Destination can be a register(exept the in register) or a label(if opcode is a consditional)  
 
